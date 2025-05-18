@@ -1,0 +1,14 @@
+site:
+  title: "Compucarlos"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/compucarlos.js"
+      api: "build/libs/compucarlos.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/compucarlos.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
