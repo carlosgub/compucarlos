@@ -97,7 +97,7 @@ private fun ImageMobile() {
     ) {
         Image(
             src = "/background.webp",
-            modifier = Modifier.fillMaxWidth().height(250.px)
+            modifier = Modifier.fillMaxWidth().height(350.px)
         )
     }
 }
