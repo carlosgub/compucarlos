@@ -46,20 +46,6 @@ fun initSiteStyles(ctx: InitSilkContext) {
     }
 }
 
-val HeadlineTextStyle = CssStyle.base {
-    Modifier
-        .fontSize(3.cssRem)
-        .textAlign(TextAlign.Start)
-        .lineHeight(1.2) //1.5x doesn't look as good on very large text
-}
-
-val SubheadlineTextStyle = CssStyle.base {
-    Modifier
-        .fontSize(1.cssRem)
-        .textAlign(TextAlign.Start)
-        .color(colorMode.toPalette().color.toRgb().copyf(alpha = 0.8f))
-}
-
 val CircleButtonVariant = ButtonStyle.addVariantBase {
     Modifier.padding(0.px).borderRadius(50.percent)
 }

@@ -19,13 +19,6 @@ import com.varabyte.kobweb.silk.theme.colors.loadFromLocalStorage
 import com.varabyte.kobweb.silk.theme.colors.saveToLocalStorage
 import com.varabyte.kobweb.silk.theme.colors.systemPreference
 
-private const val COLOR_MODE_KEY = "compucarlos:colorMode"
-
-@InitSilk
-fun initColorMode(ctx: InitSilkContext) {
-    ctx.config.initialColorMode = ColorMode.loadFromLocalStorage(COLOR_MODE_KEY) ?: ColorMode.systemPreference
-}
-
 @InitSilk
 fun initStyles(ctx: InitSilkContext) {
     ctx.stylesheet.apply {
@@ -38,11 +31,6 @@ fun initStyles(ctx: InitSilkContext) {
 @Composable
 fun AppEntry(content: @Composable () -> Unit) {
     SilkApp {
-        val colorMode = ColorMode.current
-        LaunchedEffect(colorMode) {
-            colorMode.saveToLocalStorage(COLOR_MODE_KEY)
-        }
-
         Surface(SmoothColorStyle.toModifier().fillMaxHeight()) {
             content()
         }
