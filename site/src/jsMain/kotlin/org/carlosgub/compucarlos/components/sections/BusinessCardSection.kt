@@ -17,52 +17,57 @@ import org.carlosgub.compucarlos.components.widgets.WhatsAppButton
 
 @Composable
 fun BusinessCardSection() {
-    Box(
-        Modifier
-            .fillMaxSize()
-            .padding(2.cssRem)
-            .backgroundColor(Color.rgb(250, 250, 250)),
-    ) {
-        DesktopContainer()
-        MobileContainer()
-    }
+    DesktopContainer()
+    MobileContainer()
 }
 
 @Composable
 private fun DesktopContainer() {
-    Row(
+    Box(
         Modifier
             .fillMaxSize()
-            .maxWidth(1200.px)
-            .height(800.px)
-            .borderRadius(1.cssRem)
-            .boxShadow(1.px, 2.px, 1.px, 0.px, Color.rgba(0, 0, 0, 0.1f))
-            .gap(0.px)
-            .margin(autoLength)
+            .padding(2.cssRem)
+            .backgroundColor(Color.rgb(250, 250, 250))
             .displayIfAtLeast(Breakpoint.MD),
-        verticalAlignment = Alignment.CenterVertically
     ) {
-        Image()
-        Info()
+        Row(
+            Modifier
+                .fillMaxSize()
+                .maxWidth(1200.px)
+                .height(800.px)
+                .borderRadius(1.cssRem)
+                .boxShadow(1.px, 2.px, 1.px, 0.px, Color.rgba(0, 0, 0, 0.1f))
+                .gap(0.px)
+                .margin(autoLength),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image()
+            Info()
+        }
     }
 }
 
 
 @Composable
 private fun MobileContainer() {
-    Column(
+    Box(
         Modifier
-            .fillMaxSize()
-            .fillMaxWidth()
-            .borderRadius(1.cssRem)
-            .boxShadow(1.px, 2.px, 1.px, 0.px, Color.rgba(0, 0, 0, 0.1f))
-            .gap(0.px)
-            .margin(autoLength)
+            .padding(2.cssRem)
+            .backgroundColor(Color.rgb(250, 250, 250))
             .displayUntil(Breakpoint.MD),
-        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ImageMobile()
-        InfoMobile()
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .borderRadius(1.cssRem)
+                .boxShadow(1.px, 2.px, 1.px, 0.px, Color.rgba(0, 0, 0, 0.1f))
+                .gap(0.px)
+                .margin(autoLength),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            InfoMobile()
+            ImageMobile()
+        }
     }
 }
 
@@ -92,7 +97,7 @@ private fun ImageMobile() {
     ) {
         Image(
             src = "/background.webp",
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxWidth().height(250.px)
         )
     }
 }
@@ -154,7 +159,7 @@ private fun Info() {
 @Composable
 private fun InfoMobile() {
     Column(
-        modifier = Modifier.fillMaxHeight()
+        modifier = Modifier
             .padding(topBottom = 24.px)
             .textAlign(TextAlign.Center),
         horizontalAlignment = Alignment.CenterHorizontally
