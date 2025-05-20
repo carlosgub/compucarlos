@@ -46,6 +46,6 @@ fun WhatsAppButton() {
             size = IconSize.LG,
             modifier = Modifier.margin(right = 8.px)
         )
-        Text("Hablanos por WhatsApp")
+        Text("Háblanos por WhatsApp")
     }
 }

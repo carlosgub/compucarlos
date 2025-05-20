@@ -14,6 +14,7 @@ import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import org.carlosgub.compucarlos.components.widgets.WhatsAppButton
+import org.jetbrains.compose.web.dom.A
 
 @Composable
 fun BusinessCardSection() {
@@ -60,8 +61,6 @@ private fun MobileContainer() {
             Modifier
                 .fillMaxWidth()
                 .borderRadius(1.cssRem)
-                .boxShadow(1.px, 2.px, 1.px, 0.px, Color.rgba(0, 0, 0, 0.1f))
-                .gap(0.px)
                 .margin(autoLength),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -144,12 +143,14 @@ private fun Info() {
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 SpanText("📞", Modifier.fontSize(1.2.cssRem))
-                SpanText(
-                    " 902-899-059", Modifier
-                        .fontSize(1.1.cssRem)
-                        .margin(left = 0.5.cssRem)
-                        .color(Color.rgb(51, 65, 85))
-                )
+                A(href = "tel:902899059"){
+                    SpanText(
+                        " 902-899-059", Modifier
+                            .fontSize(1.1.cssRem)
+                            .margin(left = 0.5.cssRem)
+                            .color(Color.rgb(51, 65, 85))
+                    )
+                }
             }
             WhatsAppButton()
         }
@@ -200,12 +201,14 @@ private fun InfoMobile() {
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
             SpanText("📞", Modifier.fontSize(1.2.cssRem))
-            SpanText(
-                " 902-899-059", Modifier
-                    .fontSize(1.1.cssRem)
-                    .margin(left = 0.5.cssRem)
-                    .color(Color.rgb(51, 65, 85))
-            )
+            A(href = "tel:902899059"){
+                SpanText(
+                    " 902-899-059", Modifier
+                        .fontSize(1.1.cssRem)
+                        .margin(left = 0.5.cssRem)
+                        .color(Color.rgb(51, 65, 85))
+                )
+            }
         }
         WhatsAppButton()
     }
