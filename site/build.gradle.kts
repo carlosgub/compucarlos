@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.meta
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -13,7 +14,10 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("CompuCarlos")
+            head.add{
+                meta(name = "description",content = "Servicio técnico de computadoras a domicilio en Chaclacayo, Chosica, Ñaña, Huampaní y alrededores. Soporte rápido y confiable.")
+            }
         }
     }
 }
