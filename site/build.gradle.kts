@@ -16,7 +16,7 @@ kobweb {
         index {
             description.set("CompuCarlos")
             head.add{
-                meta(name = "description",content = "Servicio técnico de computadoras a domicilio en Chaclacayo, Chosica, Ñaña, Huampaní y alrededores. Soporte rápido y confiable.")
+                meta(name = "description",content = "Servicio técnico de computadoras en Chaclacayo, Chosica, Ñaña, Huampaní y alrededores. Soporte rápido y confiable.")
             }
         }
     }
