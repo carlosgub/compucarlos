@@ -16,6 +16,7 @@ import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import org.carlosgub.compucarlos.components.widgets.WhatsAppButton
+import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.H1
@@ -59,6 +60,7 @@ private fun DesktopContainer() {
 private fun MobileContainer() {
     Box(
         Modifier
+            .minHeight(100.vh)
             .padding(2.cssRem)
             .backgroundColor(Color.rgb(250, 250, 250))
             .displayUntil(Breakpoint.MD),
@@ -66,12 +68,11 @@ private fun MobileContainer() {
         Column(
             Modifier
                 .fillMaxWidth()
-                .borderRadius(1.cssRem)
                 .margin(autoLength),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             InfoMobile()
-            ImageMobile()
         }
     }
 }
@@ -88,21 +89,6 @@ private fun Image() {
         Image(
             src = "/background.webp",
             modifier = Modifier.fillMaxSize()
-        )
-    }
-}
-
-@Composable
-private fun ImageMobile() {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .overflow(Overflow.Hidden)
-            .borderRadius(1.cssRem)
-    ) {
-        Image(
-            src = "/background.webp",
-            modifier = Modifier.fillMaxWidth().height(350.px)
         )
     }
 }
