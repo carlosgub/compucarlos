@@ -14,7 +14,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Servicio técnico de computadoras en Chaclacayo, Chosica, Ñaña, Huampaní y alrededores. Soporte rápido y confiable.")
+            description.set("Reparación, Mantenimiento, Formateo, Actualización Y Más. Atención Rápida Y Garantizada. Reparación, Mantenimiento, Servicio Tecnico, Formateo de Computadoras en Chaclacayo, Chosica y alrededores.")
         }
     }
 }
